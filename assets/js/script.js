@@ -28,3 +28,12 @@ $().ready(function() {
     setHour();
 });
 
+// Attempting to push localstorage value to corresponding text block.
+function loadTask() {
+    divEl = document.getElementsByClassName("time-block").id.toString()
+    keyEl = localStorage.getItem(localStorage.key(i)).toString()
+    if (divEl === keyEl) {
+        
+        $(".time-block").value = keyEl
+    };
+};
