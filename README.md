@@ -10,7 +10,7 @@ A digital kanban board for tracking daily tasks
  * jQuery
 
 ## Website URL:
-
+https://evan-wer.github.io/workday-scheduler/
 
 ## Contributions:
  * Evan Werner
