@@ -1,16 +1,30 @@
+// On page load enable usage of save button
 $().ready(function() {
-
-// Object value in hours to determine the current our for tasks
-
-// future, past and current block should be different colors
-
-// Save button should save data to localstorage and then hold after refresh
-
-
+    // save button 'on click'
     $(".saveBtn").click(function() {
         var value = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
-
+        // save values in local storage
         localStorage.setItem(time, value);
     });
+
+    // Function to set accurate time for hour blocks
+    function setHour() {
+        var currentHour = moment().hours();
+
+        // looping over each time block
+        $(".time-block").each(function() {
+            var hourBlock = parseInt($(this).attr("id").split("-")[1]);
+            // determine color coding of the time blocks
+            if (currentHour === hourBlock) {
+                $(this).addClass("present");
+            } else if (currentHour > hourBlock) {
+                $(this).addClass("past");
+            } else if (curentHour < hourBlock) {
+                $(this).addClass("future");
+            }
+        });
+    };
+    setHour();
 });
+
