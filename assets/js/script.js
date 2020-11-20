@@ -26,14 +26,28 @@ $().ready(function() {
         });
     };
     setHour();
-});
+    $("#hour-9 .description").val(localStorage.getItem("hour-9"))
+    $("#hour-10 .description").val(localStorage.getItem("hour-10"))
+    $("#hour-11 .description").val(localStorage.getItem("hour-11"))
+    $("#hour-12 .description").val(localStorage.getItem("hour-12"))
+    $("#hour-1 .description").val(localStorage.getItem("hour-1"))
+    $("#hour-2 .description").val(localStorage.getItem("hour-2"))
+    $("#hour-3 .description").val(localStorage.getItem("hour-3"))
+    $("#hour-4 .description").val(localStorage.getItem("hour-4"))
+    $("#hour-5 .description").val(localStorage.getItem("hour-5"))
 
-// Attempting to push localstorage value to corresponding text block.
-function loadTask() {
-    divEl = document.getElementsByClassName("time-block").id.toString()
-    keyEl = localStorage.getItem(localStorage.key(i)).toString()
-    if (divEl === keyEl) {
-        
-        $(".time-block").value = keyEl
+
+    function loadTask() {
+        divEl = document.getElementsByClassName("time-block").id.toString()
+        console.log(localStorage.key, "RED")
+        keyEl = localStorage.getItem(localStorage.key).toString()
+        if (divEl === keyEl) {
+            
+            $(".time-block").value = keyEl
+        }
     };
-};
+    loadTask();
+
+});
+// Attempting to push localstorage value to corresponding text block.
+
